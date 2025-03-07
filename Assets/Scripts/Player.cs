@@ -3,8 +3,7 @@ using UnityEngine;
 // TODO: Karakter hareket kodlarý yazýlcak
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     public float Speed;
 
