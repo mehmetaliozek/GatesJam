@@ -92,3 +92,5 @@ MonoBehaviour:
   maxPositionCount: 10
   recordTime: 0.25
   rewindDuration: 0.05
+  timeCd:
+    cooldownTime: 3

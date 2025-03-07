@@ -22,6 +22,7 @@ public class ScaleController : MonoBehaviour
     public float punchVibrate = 5f;
     public float punchElasticity = 1f;
 
+    public AbilityCooldown scaleCd;
 
     void Start()
     {

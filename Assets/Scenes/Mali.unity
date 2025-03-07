@@ -390,17 +390,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1337299393 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6074754579102345669, guid: d5a54ae8d4c42364f8a0833d8cf83b70, type: 3}
-  m_PrefabInstance: {fileID: 1988391603}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ae7007d41cb274384c77924aef19c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1988391603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,20 +399,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5098498059092053075, guid: d5a54ae8d4c42364f8a0833d8cf83b70, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1337299393}
-    - target: {fileID: -5098498059092053075, guid: d5a54ae8d4c42364f8a0833d8cf83b70, type: 3}
-      propertyPath: recordTime
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: -5098498059092053075, guid: d5a54ae8d4c42364f8a0833d8cf83b70, type: 3}
-      propertyPath: rewindDuration
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: -5098498059092053075, guid: d5a54ae8d4c42364f8a0833d8cf83b70, type: 3}
-      propertyPath: maxPositionCount
-      value: 10
+      propertyPath: timeCd.cooldownTime
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 831692406815882929, guid: d5a54ae8d4c42364f8a0833d8cf83b70, type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 27071719444733789, guid: 860465c0b0afc8542ada3206be8aa408, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.23766862
       objectReference: {fileID: 0}
     - target: {fileID: 27071719444733789, guid: 860465c0b0afc8542ada3206be8aa408, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.48184878
       objectReference: {fileID: 0}
     - target: {fileID: 27071719444733789, guid: 860465c0b0afc8542ada3206be8aa408, type: 3}
       propertyPath: m_LocalPosition.z
@@ -77,3 +77,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a2eb48c52216043b37a7d1764a6dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCharBig: 0
+  growScale: 1.5
+  shrinkScale: 0.75
+  duration: 0.5
+  shakeDuration: 0.3
+  shakeStrength: 0.2
+  shakeVibrato: 8
+  shakeRandomness: 90
+  punchScaleAmount: 0.1
+  punchDuration: 0.2
+  punchVibrate: 5
+  punchElasticity: 1
+  scaleCd:
+    cooldownTime: 3

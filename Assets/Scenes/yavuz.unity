@@ -304,10 +304,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4564757073723417775, guid: 1164cd0da4ec47e4c9cd81f381fe9131, type: 3}
-      propertyPath: shrinkScale
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 7346103537079466390, guid: 1164cd0da4ec47e4c9cd81f381fe9131, type: 3}
       propertyPath: m_Name
       value: Player-Scale

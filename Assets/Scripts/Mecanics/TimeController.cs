@@ -12,6 +12,7 @@ public class TimeController : MonoBehaviour
     private float currentRecordTime;
     public float rewindDuration = 5f;
     private bool isRewinding = false;
+    public AbilityCooldown timeCd;
 
     void Start()
     {
