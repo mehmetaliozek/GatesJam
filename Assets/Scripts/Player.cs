@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
+        float x = Input.GetAxis("Horizontal");
 
-        rb.linearVelocity = new Vector2(x * Speed * Time.deltaTime, rb.linearVelocityY);
+        rb.linearVelocity = new Vector2(x * Speed, rb.linearVelocityY);
     }
 }
