@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeController : MonoBehaviour
+public class TimeController : MonoBehaviour, IActivator
 {
     [SerializeField]
     private Player player;
@@ -72,5 +72,15 @@ public class TimeController : MonoBehaviour
 
         isRewinding = false;
         player.rb.gravityScale = gravityScale;
+    }
+
+    public void Enable()
+    {
+        enabled = true;
+    }
+
+    public void Disable()
+    {
+        enabled = false;
     }
 }

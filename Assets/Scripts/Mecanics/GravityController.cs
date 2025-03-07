@@ -1,8 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 // TODO: Yer çekimi kontrolu yazýlcak
-public class GravityController : MonoBehaviour
+public class GravityController : MonoBehaviour, IActivator
 {
     private Rigidbody2D rb;
     private bool isGravity;
@@ -12,7 +11,7 @@ public class GravityController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+
         if (rb == null)
         {
             Debug.Log("rb");
@@ -39,5 +38,15 @@ public class GravityController : MonoBehaviour
         scale.y *= -1;
         transform.localScale = scale;
         gravityCd.StartCooldown();
+    }
+
+    public void Enable()
+    {
+        enabled = true;
+    }
+
+    public void Disable()
+    {
+       enabled = false;
     }
 }

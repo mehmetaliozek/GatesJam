@@ -1,7 +1,7 @@
-using UnityEngine;
 using DG.Tweening;
+using UnityEngine;
 
-public class ScaleController : MonoBehaviour
+public class ScaleController : MonoBehaviour, IActivator
 {
     public bool isCharBig = false;
 
@@ -26,7 +26,7 @@ public class ScaleController : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -55,5 +55,15 @@ public class ScaleController : MonoBehaviour
                 isCharBig = false;
             });
         }
+    }
+
+    public void Enable()
+    {
+        enabled = true;
+    }
+
+    public void Disable()
+    {
+        enabled = false;
     }
 }
