@@ -9,6 +9,22 @@ public class GameManager : MonoBehaviour, IActivator
 
     private int activePlayer = 0;
 
+    public static GameManager Instance;
+    public GameObject ActivePlayer => character[activePlayer];
+    public Rigidbody2D ActivePlayerRb => character[activePlayer].GetComponent<Rigidbody2D>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance);
+        }
+    }
+
     private void Start()
     {
         Disable();
@@ -39,8 +55,8 @@ public class GameManager : MonoBehaviour, IActivator
         foreach (var activator in character[activePlayer].GetComponents<IActivator>())
         {
             activator.Enable();
-            character[activePlayer].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
+        ActivePlayerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void Disable()
@@ -51,6 +67,9 @@ public class GameManager : MonoBehaviour, IActivator
             {
                 activator.Disable();
             }
+            
+            Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX|RigidbodyConstraints2D.FreezeRotation;
         }
     }
 }
