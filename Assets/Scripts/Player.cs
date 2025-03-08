@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IActivator
@@ -5,7 +6,6 @@ public class Player : MonoBehaviour, IActivator
     public Rigidbody2D rb;
 
     public float Speed;
-
     public float JumpForce;
 
     [SerializeField]
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour, IActivator
 
     private void Jump()
     {
-        bool isGround = Physics2D.OverlapPoint(ground.transform.position, groundLayer);
+        bool isGround = Physics2D.OverlapBox(ground.transform.position, new Vector2(transform.localScale.x,0.1f), groundLayer);
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
