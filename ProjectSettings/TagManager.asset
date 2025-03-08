@@ -48,5 +48,8 @@ TagManager:
   - name: Water
     uniqueID: 1805941997
     locked: 0
+  - name: Ground
+    uniqueID: 262247473
+    locked: 0
   m_RenderingLayers:
   - Default

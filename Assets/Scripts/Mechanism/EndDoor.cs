@@ -11,8 +11,7 @@ public class EndDoor : MonoBehaviour
             playerCount++;
             if (playerCount == 3)
             {
-                Debug.Log("Biþey");
-                //TODO: Next Scene
+                SceneMan.LoadNextScene();
             }
         }
     }

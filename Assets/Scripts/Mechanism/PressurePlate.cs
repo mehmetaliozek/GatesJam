@@ -10,11 +10,7 @@ public class PressurePlate : MonoBehaviour
     public GameObject plate;
     public GameObject player;
     private bool isTriggered = false;
-    private bool isPlateActive = false;
-    private void Start()
-    {
-        
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -61,5 +57,4 @@ public class PressurePlate : MonoBehaviour
             activator.GetComponent<IActivator>().Disable();
         }
     }
-
 }
