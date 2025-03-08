@@ -4,19 +4,18 @@ public class Vent : MonoBehaviour
 {
     public Transform[] vents;
     public bool isEntry;
+    
     public int ReturnEntryVent()
     {
         isEntry = !isEntry;
-       return isEntry ? 1 : 0;
+        return isEntry ? 1 : 0;
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-           
-                other.transform.position = vents[ReturnEntryVent()].position;
-            
-            
+            other.transform.position = vents[ReturnEntryVent()].position;
         }
     }
 }

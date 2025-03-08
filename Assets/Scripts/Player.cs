@@ -38,7 +38,7 @@ public class Player : MonoBehaviour, IActivator
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
-            rb.AddForce(Vector2.up * JumpForce * Mathf.Sign(transform.localScale.y), ForceMode2D.Impulse);
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, JumpForce * Mathf.Sign(transform.localScale.y));
         }
     }
 
