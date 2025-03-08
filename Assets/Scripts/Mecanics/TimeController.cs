@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TimeController : MonoBehaviour, IActivator
 {
-    [SerializeField]
-    private Player player;
+    private Rigidbody2D rb;
     private List<Vector2> lastPositions;
     public int maxPositionCount = 50;
     public float recordTime = 1f;
@@ -16,6 +15,7 @@ public class TimeController : MonoBehaviour, IActivator
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         lastPositions = new List<Vector2>();
         currentRecordTime = recordTime;
     }
@@ -50,8 +50,8 @@ public class TimeController : MonoBehaviour, IActivator
 
     IEnumerator RewindCoroutine()
     {
-        float gravityScale = player.rb.gravityScale;
-        player.rb.gravityScale = 0f;
+        float gravityScale = rb.gravityScale;
+        rb.gravityScale = 0f;
         while (lastPositions.Count > 0)
         {
             Vector2 startPosition = transform.position;
@@ -71,7 +71,7 @@ public class TimeController : MonoBehaviour, IActivator
         }
 
         isRewinding = false;
-        player.rb.gravityScale = gravityScale;
+        rb.gravityScale = gravityScale;
     }
 
     public void Enable()

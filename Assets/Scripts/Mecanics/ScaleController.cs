@@ -7,7 +7,7 @@ public class ScaleController : MonoBehaviour, IActivator
 
     [Header("Büyüme-Küçülme Ayarlarý")]
     public float growScale = 1.5f;
-    public float shrinkScale = 0.75f; // Küçülme miktarý
+    public float shrinkScale = 1f; // Küçülme miktarý
     public float duration = 0.5f;
 
     [Header("Shake Efekti Ayarlarý")]
@@ -23,11 +23,6 @@ public class ScaleController : MonoBehaviour, IActivator
     public float punchElasticity = 1f;
 
     public AbilityCooldown scaleCd;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {

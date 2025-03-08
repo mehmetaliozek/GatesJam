@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// TODO: Karakter hareket kodlarý yazýlcak
 public class Player : MonoBehaviour, IActivator
 {
     public Rigidbody2D rb;
@@ -14,6 +13,11 @@ public class Player : MonoBehaviour, IActivator
     [SerializeField]
     private LayerMask groundLayer;
 
+    private void Start()
+    {
+
+    }
+
     void Update()
     {
         Move();
@@ -22,8 +26,10 @@ public class Player : MonoBehaviour, IActivator
 
     private void Move()
     {
-        float x = Input.GetAxis("Horizontal");
-        rb.linearVelocity = new Vector2(x * Speed, rb.linearVelocityY);
+        float moveInput = Input.GetAxis("Horizontal");
+        rb.linearVelocity = new Vector2(moveInput * Speed, rb.linearVelocityY);
+
+        Turn(moveInput);
     }
 
     private void Jump()
@@ -32,7 +38,19 @@ public class Player : MonoBehaviour, IActivator
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
-            rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * JumpForce * Mathf.Sign(transform.localScale.y), ForceMode2D.Impulse);
+        }
+    }
+
+    private void Turn(float moveInput)
+    {
+        if (moveInput < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0);
+        }
+        else if (moveInput > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
@@ -44,5 +62,6 @@ public class Player : MonoBehaviour, IActivator
     public void Disable()
     {
         enabled = false;
+        rb.linearVelocity = Vector2.zero;
     }
 }

@@ -68,17 +68,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -5098498059092053075}
   m_SourcePrefab: {fileID: 100100000, guid: 860465c0b0afc8542ada3206be8aa408, type: 3}
---- !u!114 &6074754579102345669 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6892534212247849001, guid: 860465c0b0afc8542ada3206be8aa408, type: 3}
-  m_PrefabInstance: {fileID: 858760653623534060}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6330843174734486003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ae7007d41cb274384c77924aef19c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6330843174734486003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6643163564059228191, guid: 860465c0b0afc8542ada3206be8aa408, type: 3}
@@ -96,9 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4087e9711b26c34c9d36163f30f0b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6074754579102345669}
   maxPositionCount: 10
   recordTime: 0.25
-  rewindDuration: 0.05
+  rewindDuration: 0.1
   timeCd:
     cooldownTime: 0

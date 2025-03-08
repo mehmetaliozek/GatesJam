@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// TODO: Yer çekimi kontrolu yazýlcak
 public class GravityController : MonoBehaviour, IActivator
 {
     private Rigidbody2D rb;

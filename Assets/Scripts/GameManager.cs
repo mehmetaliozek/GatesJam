@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour, IActivator
 {
+
     [SerializeField]
     private List<GameObject> character;
 
-    private int index = 0;
+    private int activePlayer = 0;
 
     private void Start()
     {
@@ -23,10 +24,10 @@ public class GameManager : MonoBehaviour, IActivator
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            index++;
-            if (index == character.Count)
+            activePlayer++;
+            if (activePlayer == character.Count)
             {
-                index = 0;
+                activePlayer = 0;
             }
             Disable();
             Enable();
@@ -35,9 +36,10 @@ public class GameManager : MonoBehaviour, IActivator
 
     public void Enable()
     {
-        foreach (var activator in character[index].GetComponents<IActivator>())
+        foreach (var activator in character[activePlayer].GetComponents<IActivator>())
         {
             activator.Enable();
+            character[activePlayer].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
