@@ -16,7 +16,7 @@ public class PressurePlate : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") && !isActivated && player.transform.localScale == new Vector3(1.5f, 1.5f, 1.5f)&&!isTriggered)
         {
-           
+           SoundManager.PlaySound(SoundType.Pressure);
             isActivated = true;
             isTriggered = true;
             plate.transform.position = new Vector3(plate.transform.position.x, plate.transform.position.y -0.2f, transform.position.z);
@@ -31,7 +31,7 @@ public class PressurePlate : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && !isActivated && player.transform.localScale == new Vector3(1.5f, 1.5f, 1.5f) && !isTriggered)
         {
-            
+            SoundManager.PlaySound(SoundType.Pressure);
             isActivated = true;
             isTriggered= true;
             plate.transform.position = new Vector3(plate.transform.position.x, plate.transform.position.y - 0.2f, transform.position.z);

@@ -22,6 +22,7 @@ public class GravityController : MonoBehaviour, IActivator
         gravityCd.UpdateCooldown();
         if (Input.GetKeyDown(KeyCode.F) && gravityCd.IsReady)
         {
+            SoundManager.PlaySound(SoundType.Gravity);
             ReverseGravity();
 
         }

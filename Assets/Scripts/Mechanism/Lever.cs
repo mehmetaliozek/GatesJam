@@ -14,6 +14,7 @@ public class Lever : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player" && !isAnimationWorking)
         {
+            SoundManager.PlaySound(SoundType.Lever,0.05f);
             isAnimationWorking = true;
             transform.DORotate(new Vector3(0, 0, !isLeverActive ? -60 : 0), 0.5f, RotateMode.Fast).OnComplete(()=>{
                 isAnimationWorking =false;

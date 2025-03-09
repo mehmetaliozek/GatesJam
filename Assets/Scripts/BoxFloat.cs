@@ -18,6 +18,7 @@ public class BoxFloat : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
+            SoundManager.PlaySound(SoundType.WaterBlink);
             rb.linearDamping = 5f; // Suda yavaþlama
             rb.angularDamping = 5f; // Dönüþ de yavaþlasýn
             floatTimer = floatDuration; // Süreyi baþlat

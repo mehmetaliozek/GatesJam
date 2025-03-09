@@ -15,6 +15,7 @@ public class Vent : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SoundManager.PlaySound(SoundType.Vent);
             other.transform.position = vents[ReturnEntryVent()].position;
         }
     }
