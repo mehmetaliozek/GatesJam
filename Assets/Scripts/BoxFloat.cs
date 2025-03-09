@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class BoxFloat : MonoBehaviour
+public class BoxFloat : MonoBehaviour, IActivator
 {
     private Rigidbody2D rb;
     public float floatForce = 10f;
@@ -18,6 +18,7 @@ public class BoxFloat : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
+            SoundManager.PlaySound(SoundType.WaterBlink);
             rb.linearDamping = 5f; // Suda yavaþlama
             rb.angularDamping = 5f; // Dönüþ de yavaþlasýn
             floatTimer = floatDuration; // Süreyi baþlat
@@ -48,6 +49,17 @@ public class BoxFloat : MonoBehaviour
             }
         }
 
+    }
+
+    public void Enable()
+    {
+        rb.gravityScale = 1;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+    }
+
+    public void Disable()
+    {
+        
     }
 
     //private void OnTriggerStay2D(Collider2D other)

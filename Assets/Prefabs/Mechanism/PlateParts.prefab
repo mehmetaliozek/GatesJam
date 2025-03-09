@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 864944010678314890}
   - component: {fileID: 4254905840080772812}
   - component: {fileID: 7285674043349445550}
+  - component: {fileID: 3513957136923478439}
   m_Layer: 0
   m_Name: PressurePlateBase
   m_TagString: Untagged
@@ -118,11 +119,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.05927515}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,8 +133,23 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8342247, y: 0.26171875}
+  m_Size: {x: 1.8342247, y: 0.38026905}
   m_EdgeRadius: 0
+--- !u!114 &3513957136923478439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721201229157884341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bccfcd65469f59468b629145e14b54c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activators: []
+  plate: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &3268656396423304021
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +194,6 @@ GameObject:
   - component: {fileID: 7550588492059018539}
   - component: {fileID: 7124720638103828646}
   - component: {fileID: 2763543973272334503}
-  - component: {fileID: 8263710034847521029}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -302,16 +317,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.7530422, y: 0.111504555}
   m_EdgeRadius: 0
---- !u!114 &8263710034847521029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115500311842995699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86c0e823c1d3e440a4ae618325f1147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activators: []
