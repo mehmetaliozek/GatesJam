@@ -20,12 +20,13 @@ public class PressurePlate : MonoBehaviour
             isActivated = true;
             isTriggered = true;
             plate.transform.position = new Vector3(plate.transform.position.x, plate.transform.position.y -0.2f, transform.position.z);
+            foreach (var activator in activators)
+            {
+                activator.GetComponent<IActivator>().Enable();
+            }
         }
 
-        foreach (var activator in activators)
-        {
-            activator.GetComponent<IActivator>().Enable();
-        }
+
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -35,11 +36,10 @@ public class PressurePlate : MonoBehaviour
             isActivated = true;
             isTriggered= true;
             plate.transform.position = new Vector3(plate.transform.position.x, plate.transform.position.y - 0.2f, transform.position.z);
-        }
-
-        foreach (var activator in activators)
-        {
-            activator.GetComponent<IActivator>().Enable();
+            foreach (var activator in activators)
+            {
+                activator.GetComponent<IActivator>().Enable();
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

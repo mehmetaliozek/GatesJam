@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class BoxFloat : MonoBehaviour
+public class BoxFloat : MonoBehaviour, IActivator
 {
     private Rigidbody2D rb;
     public float floatForce = 10f;
@@ -48,6 +48,16 @@ public class BoxFloat : MonoBehaviour
             }
         }
 
+    }
+
+    public void Enable()
+    {
+        rb.gravityScale = 1;
+    }
+
+    public void Disable()
+    {
+        
     }
 
     //private void OnTriggerStay2D(Collider2D other)
