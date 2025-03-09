@@ -9,6 +9,9 @@ public class Player : MonoBehaviour, IActivator
     public float JumpForce;
 
     [SerializeField]
+    private GameObject pointer;
+
+    [SerializeField]
     private Transform ground;
     [SerializeField]
     private LayerMask groundLayer;
@@ -57,11 +60,13 @@ public class Player : MonoBehaviour, IActivator
     public void Enable()
     {
         enabled = true;
+        pointer.SetActive(true);
     }
 
     public void Disable()
     {
         enabled = false;
+        pointer.SetActive(false);
         rb.linearVelocity = Vector2.zero;
     }
 }

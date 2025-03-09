@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ClosedDoor : MonoBehaviour, IActivator
 {
+    public float targetY = -5;
     float deafultY;
 
     private void Start()
@@ -12,7 +13,7 @@ public class ClosedDoor : MonoBehaviour, IActivator
 
     public void Enable()
     {
-        transform.DOLocalMoveY(-5, 1);
+        transform.DOLocalMoveY(targetY, 1);
     }
 
     public void Disable()
