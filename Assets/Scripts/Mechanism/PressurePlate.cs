@@ -14,7 +14,7 @@ public class PressurePlate : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Player") && !isActivated && player.transform.localScale == new Vector3(1.5f, 1.5f, 1.5f)&&!isTriggered)
+        if (collision.gameObject.CompareTag("Player") && !isActivated && player.transform.localScale.y > 1.5f &&!isTriggered)
         {
            SoundManager.PlaySound(SoundType.Pressure);
             isActivated = true;

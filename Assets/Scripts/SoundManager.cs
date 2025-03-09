@@ -1,8 +1,6 @@
-using UnityEngine.SceneManagement;
-using UnityEngine;
-using System.Collections;
-using UnityEngine.Events;
 using System;
+using System.Collections;
+using UnityEngine;
 
 public enum SoundType
 {
@@ -62,7 +60,7 @@ public class SoundManager : MonoBehaviour
     //    musicSource.clip = newMusic;
     //    musicSource.Play();
     //}
-    public  static int MuteSoundsEffect()
+    public static int MuteSoundsEffect()
     {
         return 0;
     }
@@ -71,11 +69,13 @@ public class SoundManager : MonoBehaviour
     {
         StartCoroutine(IsPlayingCoroutine(action));
     }
+
     private IEnumerator IsPlayingCoroutine(Action action)
     {
-        while (audioSource.isPlaying)
+        float elapsed = 0;
+        while (audioSource.isPlaying && elapsed < 1f)
         {
-
+            elapsed += Time.deltaTime;
             yield return null;
         }
         action();

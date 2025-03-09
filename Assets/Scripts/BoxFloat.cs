@@ -54,6 +54,7 @@ public class BoxFloat : MonoBehaviour, IActivator
     public void Enable()
     {
         rb.gravityScale = 1;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
     }
 
     public void Disable()

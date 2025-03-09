@@ -11,10 +11,14 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private LayerMask layer;
 
+    public Animator animator;
+
+    public bool isFly;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator.SetBool("IsFly", isFly);
     }
 
     void Update()
