@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneMan : MonoBehaviour
 {
+    public static GameObject mainMenu;
     public static void LoadNextScene()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)
@@ -31,6 +32,11 @@ public class SceneMan : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         //SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[2]);
+    }
+
+    public static void LoadTutorial()
+    {
+        SceneManager.LoadScene("TutorialScene");
     }
 
     public static void QuitGame()
