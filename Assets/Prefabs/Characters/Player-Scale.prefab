@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 27071719444733789, guid: 860465c0b0afc8542ada3206be8aa408, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 27071719444733789, guid: 860465c0b0afc8542ada3206be8aa408, type: 3}
       propertyPath: m_LocalPosition.y
@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCharBig: 0
-  growScale: 1.5
-  shrinkScale: 1
+  growScale: 2.5
+  shrinkScale: 1.5
   duration: 0.5
   shakeDuration: 0.3
   shakeStrength: 0.2

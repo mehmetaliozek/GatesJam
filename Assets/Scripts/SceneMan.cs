@@ -4,16 +4,25 @@ using UnityEngine.SceneManagement;
 public class SceneMan : MonoBehaviour
 {
     public static GameObject mainMenu;
+
+    public GameObject teaser;
+
+    public void Teaser()
+    {
+        teaser.SetActive(true);
+    }
+
     public static void LoadNextScene()
     {
+        
         if (SceneManager.GetActiveScene().buildIndex != 0)
             SoundManager.PlaySound(SoundType.LevelEnd);
         SoundManager.Instance.IsPlaying(() =>
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         });
-
         SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
+
     }
 
     public static void LoadCurrentScene()

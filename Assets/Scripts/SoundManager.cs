@@ -34,6 +34,7 @@ public class SoundManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         musicSource = gameObject.AddComponent<AudioSource>();
+        SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
         //SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
         //musicSource.loop = true;
         musicSource.volume = 0.5f;
