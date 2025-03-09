@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IActivator
@@ -16,6 +18,8 @@ public class Player : MonoBehaviour, IActivator
     private Transform ground;
     [SerializeField]
     private LayerMask groundLayer;
+
+    private bool isJumping = false;
 
     private void Start()
     {
@@ -40,13 +44,8 @@ public class Player : MonoBehaviour, IActivator
 
     private void Jump()
     {
+        
         bool isGround = Physics2D.OverlapBox(ground.transform.position, new Vector2(transform.localScale.x, 0.1f), groundLayer);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
-        {
-            SoundManager.PlaySound(SoundType.Jump);
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, JumpForce * Mathf.Sign(transform.localScale.y));
-        }
 
         if (!isGround)
         {
@@ -62,6 +61,16 @@ public class Player : MonoBehaviour, IActivator
         else
         {
             animator.SetInteger("JumpState", 3);
+        }
+
+
+        if (isJumping) return;
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        {
+            isJumping = true;
+            SoundManager.PlaySound(SoundType.Jump);
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, JumpForce * Mathf.Sign(transform.localScale.y));
         }
     }
 
@@ -105,5 +114,18 @@ public class Player : MonoBehaviour, IActivator
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(ground.transform.position, new Vector2(transform.localScale.x, 0.1f));
+    }
+
+    List<string> list = new List<string>(){
+            "Player",
+            "Enemy",
+            "Ground"
+    };
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (list.Contains(collision.gameObject.tag))
+        {
+            isJumping = false;
+        }
     }
 }
