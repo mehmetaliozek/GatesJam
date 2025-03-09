@@ -26,6 +26,7 @@ public class TimeController : MonoBehaviour, IActivator
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            SoundManager.PlaySound(SoundType.Ekko);
             StartCoroutine(RewindCoroutine());
             isRewinding = !isRewinding;
         }

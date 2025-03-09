@@ -1,17 +1,29 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneMan : MonoBehaviour
 {
     public static void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            SoundManager.PlaySound(SoundType.LevelEnd);
+        SoundManager.Instance.IsPlaying(() =>
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        });
+        
         //SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
     }
 
     public static void LoadCurrentScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SoundManager.PlaySound(SoundType.Die);
+
+        SoundManager.Instance.IsPlaying(() =>
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        });
+        
         //SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
     }
 
@@ -25,4 +37,5 @@ public class SceneMan : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

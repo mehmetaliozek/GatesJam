@@ -13,11 +13,13 @@ public class ClosedDoor : MonoBehaviour, IActivator
 
     public void Enable()
     {
+        SoundManager.PlaySound(SoundType.DoorOpen);
         transform.DOLocalMoveY(targetY, 1);
     }
 
     public void Disable()
     {
+        SoundManager.PlaySound(SoundType.DoorOpen);
         transform.DOLocalMoveY(deafultY, 1);
     }
 }

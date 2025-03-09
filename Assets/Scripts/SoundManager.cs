@@ -1,17 +1,20 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.Events;
+using System;
 
 public enum SoundType
 {
-    Scale,//
-    Ekko,//
-    Gravity,//
-    Vent,//
-    Jump,//
-    Die,//
-    Lever,//
+    Scale,
+    Ekko,
+    Gravity,
+    Vent,
+    Jump,
+    Die,
+    Lever,
     Button,//
-    WaterBlink,//
+    WaterBlink,
     DoorOpen,//
     LevelEnd,
     Pressure
@@ -59,4 +62,22 @@ public class SoundManager : MonoBehaviour
     //    musicSource.clip = newMusic;
     //    musicSource.Play();
     //}
+    public  static int MuteSoundsEffect()
+    {
+        return 0;
+    }
+
+    public void IsPlaying(Action action)
+    {
+        StartCoroutine(IsPlayingCoroutine(action));
+    }
+    private IEnumerator IsPlayingCoroutine(Action action)
+    {
+        while (audioSource.isPlaying)
+        {
+
+            yield return null;
+        }
+        action();
+    }
 }

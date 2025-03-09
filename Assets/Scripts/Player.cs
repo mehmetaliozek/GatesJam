@@ -41,6 +41,7 @@ public class Player : MonoBehaviour, IActivator
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
+            SoundManager.PlaySound(SoundType.Jump);
             rb.linearVelocity = new Vector2(rb.linearVelocityX, JumpForce * Mathf.Sign(transform.localScale.y));
         }
     }
