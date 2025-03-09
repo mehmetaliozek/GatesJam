@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravitySpeed: 10
   gravityCd:
-    cooldownTime: 3
+    cooldownTime: 1.5

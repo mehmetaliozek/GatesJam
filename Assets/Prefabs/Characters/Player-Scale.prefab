@@ -118,4 +118,4 @@ MonoBehaviour:
   punchVibrate: 5
   punchElasticity: 1
   scaleCd:
-    cooldownTime: 3
+    cooldownTime: 1.5
