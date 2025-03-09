@@ -21,10 +21,10 @@ public enum SoundType
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioClip[] soundList;
-    //[SerializeField] public AudioClip[] musics;
+    [SerializeField] public AudioClip[] musics;
     public static SoundManager Instance;
     private AudioSource audioSource;
-    //private AudioSource musicSource;
+    private AudioSource musicSource;
 
     private void Awake()
     {
@@ -33,9 +33,10 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        //musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource = gameObject.AddComponent<AudioSource>();
+        //SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
         //musicSource.loop = true;
-        //musicSource.volume = 0.5f;
+        musicSource.volume = 0.5f;
         //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //if (currentSceneIndex == 0)
         //{
@@ -54,13 +55,14 @@ public class SoundManager : MonoBehaviour
     //{
     //    musicSource.Stop();
     //}
-    //public void ChangeMusic(AudioClip newMusic)
-    //{
-    //    musicSource.Stop();
-    //    musicSource.clip = newMusic;
-    //    musicSource.Play();
-    //}
-    public static int MuteSoundsEffect()
+    public void ChangeMusic(AudioClip newMusic)
+    {
+        musicSource.Stop();
+        musicSource.clip = newMusic;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+    public  static int MuteSoundsEffect()
     {
         return 0;
     }
@@ -73,7 +75,7 @@ public class SoundManager : MonoBehaviour
     private IEnumerator IsPlayingCoroutine(Action action)
     {
         float elapsed = 0;
-        while (audioSource.isPlaying && elapsed < 1f)
+        while (audioSource.isPlaying && elapsed < 0.05f)
         {
             elapsed += Time.deltaTime;
             yield return null;

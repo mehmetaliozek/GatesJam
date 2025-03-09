@@ -4102,6 +4102,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5354608709414043994, guid: 4ee718395978d0f46bde5224980f34a7, type: 3}
+      propertyPath: musics.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354608709414043994, guid: 4ee718395978d0f46bde5224980f34a7, type: 3}
+      propertyPath: 'musics.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 73d9cf3f923549443a3599a6384cb579, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

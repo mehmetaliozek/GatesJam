@@ -28,7 +28,7 @@ public class ScaleController : MonoBehaviour, IActivator
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SoundManager.PlaySound(SoundType.Scale);
+            SoundManager.PlaySound(SoundType.Scale,0.2f);
             StartScaling();
         }
     }
