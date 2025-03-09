@@ -11,8 +11,8 @@ public class SceneMan : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         });
-        
-        //SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
+
+        SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
     }
 
     public static void LoadCurrentScene()
@@ -24,7 +24,7 @@ public class SceneMan : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         });
         
-        //SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
+        SoundManager.Instance.ChangeMusic(SoundManager.Instance.musics[0]);
     }
 
     public static void LoadMainMenu()
