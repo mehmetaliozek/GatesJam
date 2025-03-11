@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEditor.Timeline;
 public class Lever : MonoBehaviour
 {
     private bool isLeverActive = false;
